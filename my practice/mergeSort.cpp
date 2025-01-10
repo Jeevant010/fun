@@ -2,7 +2,7 @@
 using namespace std;
 
 void mergeSort(vector <int> &a){
-    
+
 }
 
 
@@ -14,7 +14,5 @@ int main(void){
     {
         cin>>t[i];
     }
-    cout<<"Enter the value for search :\n";
-    cin>>key;
     mergeSort(t);
 }
