@@ -35,7 +35,6 @@ class Solution {
 
 //{ Driver Code Starts.
 
-// Function to Build Tree
 Node* buildTree(string str) {
     // Corner Case
     if (str.length() == 0 || str[0] == 'N')
