@@ -13,7 +13,6 @@ void merge(vector<int>& arr, int left, int mid, int right) {
     for (int j = 0; j < n2; j++)
         R[j] = arr[mid + 1 + j];
 
-    // Merge the temporary arrays back into arr[left..right]
     int i = 0, j = 0, k = left; // Initial indexes for L[], R[], and merged array
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
