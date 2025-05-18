@@ -51,13 +51,13 @@ void mergeSort(vector<int>& arr, int left, int right) {
     }
 }
 int main() {
-    vector<int> arr = {151, 10, 7, 8, 9, 1, 5}; // Example array
+    vector<int> arr = {151, 10, 7, 8, 9, 1, 5};
     int n = arr.size();
-    mergeSort(arr, 0, n - 1); // Call mergeSort on the entire array
+    mergeSort(arr, 0, n - 1);
     cout << "Sorted array: \n";
     for (int i = 0; i < n; i++) {
-        cout << arr[i] << " "; // Print sorted array
+        cout << arr[i] << " "; 
     }
     cout << endl;
-    return 0; // Exit the program
+    return 0;
 }
