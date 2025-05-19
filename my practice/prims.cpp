@@ -11,7 +11,7 @@ vector<vector<pii>> prim_mst(const vector<vector<pii>>& graph, int start_vertex)
     vector<bool> visited(n, false);
     vector<int> min_weight(n, INT_MAX);
     vector<int> parent(n, -1);
-    priority_queue<pii, vector<pii>, greater<pii>> pq; // min-heap
+    priority_queue<pii, vector<pii>, greater<pii>> pq;
 
     min_weight[start_vertex] = 0;
     pq.push({0, start_vertex});
