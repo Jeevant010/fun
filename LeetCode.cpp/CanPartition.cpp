@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// The first solution is not the person friendly as you know what types of things we are usnign so many types is also not known to us.
+
 class Solution {
     public:
         bool canPartition(vector<int>& nums) {
