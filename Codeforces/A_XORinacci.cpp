@@ -17,7 +17,7 @@ using namespace std;
 int func(ll a, ll b, ll c){
     if(c == 0) return a;
     if(c == 1) return b;
-    if(c % 3 == 0) return a ^ b;
+    if(c % 3 == 2) return a ^ b;
     if(c % 3 == 1) return b;
     return a;
 }
