@@ -48,10 +48,9 @@
 #define ull unsigned long long
 using namespace std;
 
-int main()
-{
-    int n, a, one = 0;
-
+int main(){
+    ios_base::sync_with_stdio(false);
+    int n, a, one = 0; 
     cin>>n;
     vector<int>v;
     for(int i=0; i<n; i++){
@@ -65,17 +64,12 @@ int main()
         return 0;
     }
     int ans = 0;
-    for(int i=0; i<v.size(); i++){
-        for(int j=i+1; j<v.size(); j++){
-            if(v[j] % v[i] == 0){
-                v.erase(v.begin()+j);
-            }
-        }
-    }
-    for(int i=0; i<v.size(); i++){
-        for(int j=i+1; j<v.size(); j++){
-            if(v[j] % v[i] == 0){
-                v.erase(v.begin()+j);
+    for(int f=0; f<2; f++){
+        for(int i=0; i<v.size(); i++){
+            for(int j=i+1; j<v.size(); j++){
+                if(v[j] % v[i] == 0){
+                    v.erase(v.begin()+j);
+                }
             }
         }
     }
