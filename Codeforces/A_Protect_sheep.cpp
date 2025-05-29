@@ -54,5 +54,4 @@ int main(){
         }
         cout << endl;
     }
-    
 }
