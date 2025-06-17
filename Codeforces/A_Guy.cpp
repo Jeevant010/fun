@@ -5,16 +5,17 @@ using namespace std;
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int n, m;
+    int n, m, q;
     cin >> n >> m;
     vector<int> v(m);
-    vector<int> p(m);
     set<int> s;
     for(int i=0; i<m; i++){
         cin>>v[i];
         s.insert(v[i]);
     }
-    for(int i=0; i<m; i++){
+    cin>>q;
+    vector<int> p(q);
+    for(int i=0; i<q; i++){
         cin>>p[i];
         s.insert(p[i]);
     }
