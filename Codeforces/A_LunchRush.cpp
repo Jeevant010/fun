@@ -13,6 +13,6 @@ int main() {
         if(t <= k) mx = max(mx, f);
         else mx = max(mx, (f - (t - k)));
     }
-    cout << mx << endll;
+    cout << mx << endl;
 
 }
