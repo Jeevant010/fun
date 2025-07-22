@@ -6,6 +6,11 @@ using namespace std;
 #define v vector
 #define p pair
 #define m unordered_map
+#define eb emplace_back
+#define pb push_back
+#define po pop_back
+#define pq priority_queue
+#define INF 1e9
 
 ll gcd(ll a, ll b){
     if( b>a ) swap(a,b);
@@ -22,16 +27,16 @@ ll og2(ll x){
 
 void solve() {
     
+        
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    
-    int t = 1;
-    while (t--) {
+    int t;
+    cin>>t;
+    while( t-- ){
         solve();
     }
-    
     return 0;
 }
