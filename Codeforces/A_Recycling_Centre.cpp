@@ -28,30 +28,39 @@ void solve() {
     v<ll> k(n);
     r(i,n) cin >> k[i];
     
-    ll c = 0;
-    while(!k.empty()) {
-        ll ma = LLONG_MIN, idx = -1;
+    // ll c = 0;
+    // while(!k.empty()) {
+    //     ll ma = LLONG_MIN, idx = -1;
 
-        for (ll i = 0; i < (ll)k.size(); i++) {
-            if (k[i] > ma && k[i] <= t) {
-                ma = k[i];
-                idx = i;
-            }
-        }
+    //     for (ll i = 0; i < (ll)k.size(); i++) {
+    //         if (k[i] > ma && k[i] <= t) {
+    //             ma = k[i];
+    //             idx = i;
+    //         }
+    //     }
 
-        if (idx == -1) {  
-            c += k.size();
-            break;
-        }
+    //     if (idx == -1) {  
+    //         c += k.size();
+    //         break;
+    //     }
 
-        k.erase(k.begin() + idx); 
+    //     k.erase(k.begin() + idx); 
 
-        for (ll i = 0; i < (ll)k.size(); i++) {
-            k[i] *= 2;
-        }
-    }
-    cout << c << "\n";
+    //     for (ll i = 0; i < (ll)k.size(); i++) {
+    //         k[i] *= 2;
+    //     }
+    // }
+    // cout << c << "\n";
     
+    sort(trvs(k));
+    ll db = 1, c=0 ;
+    for(ll i =n-1; i>=0; --i){
+        if( k[i]*db <= t ) {
+            db *= 2;
+        }
+        else c++;
+    }
+    cout<<c<<"\n";
 
 }
 
