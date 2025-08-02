@@ -27,16 +27,28 @@ void solve() {
     cin>>n;
     v<int> s(n);
     r(i,n) cin>>s[i];
-    v<int> dp(n, 0);
+    v<ll> dp(n, 0);
     dp[0] = 1;
     
-    int a =1;
-        for(int j = 1 ; j < n; j++){
-            if(s[j] > s[j-1]) dp[j] += dp[j-1] + 1;
-            else dp[j] += dp[j-1] + (j+1);
-            a += dp[j];
+    ll a =1;
+    for(int j = 1 ; j < n; j++){
+        if(s[j] > s[j-1]) dp[j] += dp[j-1] + 1;
+        else dp[j] += dp[j-1] + (j+1);
+        a += dp[j];
     }
     cout<<a<<"\n";
+    // int n; cin >> n;
+	// 	vector<int> p(n);
+	// 	for(auto &x : p) cin >> x;
+ 
+	// 	ll ans = 1;
+	// 	vector<ll> dp(n, 0); dp[0] = 1;
+	// 	for(int i = 1; i < n; i++) {
+	// 		if(p[i] > p[i-1]) dp[i] = dp[i-1] + 1;
+	// 		else dp[i] = dp[i-1] + (i+1);
+	// 		ans += dp[i];
+	// 	}
+	// 	cout << ans << "\n";
 }
 
 int main() {
@@ -49,5 +61,4 @@ int main() {
         solve();
     }
     
-    return 0;
 }
