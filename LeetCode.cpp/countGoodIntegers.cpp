@@ -21,11 +21,11 @@ class Solution {
     }
     ll allArrangements(string number,int& n){
         sort(number.begin(),number.end());
-        if(done.count(stoll(number)))//If already included then skip
+        if(done.count(stoll(number)))
             return 0;
         
         done.insert(stoll(number));
-        //Find frequency of each digit
+        
         vector<ll> freq(10);
         for(char& c: number)
             freq[c-'0']++;

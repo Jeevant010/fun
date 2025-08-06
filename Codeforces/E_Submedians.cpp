@@ -36,7 +36,7 @@ pair<bool, pair<int, int>> check(int n, vector<int> &a, int k, int mid) {
 		if(pref[i] - min_pref >= 0) {
 			return {true, {min_pref_pos, i}};
 		}
- 
+
 		if(pref[i-(k-1)] < min_pref) {
 			min_pref = pref[i-(k-1)];
 			min_pref_pos = i-(k-1)+1;
