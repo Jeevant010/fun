@@ -12,6 +12,7 @@ ll gcd(ll a, ll b){
     return b == 0 ? a : gcd(b, a % b);
 }
 
+
 ll lcm(ll a, ll b ){
     return abs(a * b) / gcd(a, b);
 }
@@ -20,20 +21,31 @@ ll og2(ll x){
     return (64 - __builtin_clzll(x) - 1);
 }
 
+
 void solve() {
-    ll k, n , w;
-    cin>>k>>n>>w;
-    cout<<(k*( w * (w+1) )/2) - n<<"\n"; 
+    int n; cin>>n;
+    int c = 1;
+    v<int> a;
+    while( n > 0 ){
+        if( n % 10 != 0 ){
+            a.push_back(c*(n%10));
+        } 
+        n /= 10;
+        c *= 10;
+    }
+    cout<<a.size()<<"\n";
+    r(i,a.size()) cout<<a[i]<<" ";
+    cout<<"\n";
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int t = 1;
+    int t ;
+    cin>>t;
     while (t--) {
         solve();
     }
     
-    return 0;
 }
