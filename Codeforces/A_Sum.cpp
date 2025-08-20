@@ -23,16 +23,22 @@ ll og2(ll x){
 
 
 void solve() {
-    int a, b , c;
-    cin>>a>>b>>c;
-    int x1 = a+b;
-    int x2 = b+c;
-    int x3 = c+a;
-    
-    if( x1 == c ) cout<<"YES"<<"\n";
-    else if( x2 == a ) cout<<"YES"<<"\n";
-    else if( x3 == b ) cout<<"YES"<<"\n";
-    else  cout<<"NO"<<"\n";
+    int n , a = 0;
+    cin>>n;
+    int t = 0;
+    r(i,n){
+        int x; cin>>x;
+        if( x < 0 ) {
+            if( t>0 ) t--;
+            else {
+                a++;
+            }
+        }
+        else {
+            t += x;
+        }
+    }
+    cout<<a<<"\n";
     
 }
 
@@ -40,8 +46,7 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int t;
-    cin>>t;
+    int t = 1;
     while (t--) {
         solve();
     }
