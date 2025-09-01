@@ -25,30 +25,38 @@ ll og2(ll x){
 void solve() {
     int n;
     cin>>n;
-    v<int> s(n);
-    r(i,n) cin>>s[i];
-    v<ll> dp(n, 0);
-    dp[0] = 1;
-    
-    ll a =1;
-    for(int j = 1 ; j < n; j++){
-        if(s[j] > s[j-1]) dp[j] += dp[j-1] + 1;
-        else dp[j] += dp[j-1] + (j+1);
-        a += dp[j];
+    vector<int> a(n);
+    map<int,int> mp;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        mp[a[i]] = i;
     }
-    cout<<a<<"\n";
-    // int n; cin >> n;
-	// 	vector<int> p(n);
-	// 	for(auto &x : p) cin >> x;
- 
-	// 	ll ans = 1;
-	// 	vector<ll> dp(n, 0); dp[0] = 1;
-	// 	for(int i = 1; i < n; i++) {
-	// 		if(p[i] > p[i-1]) dp[i] = dp[i-1] + 1;
-	// 		else dp[i] = dp[i-1] + (i+1);
-	// 		ans += dp[i];
-	// 	}
-	// 	cout << ans << "\n";
+   
+    int j = -1;
+    int mi = a[n-1];
+    int res = 0;
+    for(int i=n-2;i>=0;i--){
+        if(a[i] <= mi){
+            mi = a[i];
+        }else{
+            int k = mp[a[i]];
+            if(k > i){
+                j = max(k,j);
+            }
+            else
+            j = max(j,i);
+            }
+    }
+    
+    if(j>=0){
+        mp.clear();
+        for(int i=0;i<=j;i++){
+            mp[a[i]]=1;
+        }
+        cout<<mp.size()<<"\n";
+    }else{
+        cout<<0<<"\n";
+}
 }
 
 int main() {

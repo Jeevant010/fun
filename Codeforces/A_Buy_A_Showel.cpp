@@ -30,8 +30,7 @@ int main()
     cin>>k>>r;
     for(ll i=1;i<=9;i++)
     {
-        if((k*i)%10==r || (k*i)%10==0)
-        {
+        if((k*i)%10==r || (k*i)%10==0){
             n=i;
             break;
         }

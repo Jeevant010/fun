@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.26100.0",
+            "cStandard": "c23",
+            "cppStandard": "c++26",
+            "intelliSenseMode": "gcc-x86",
+            "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+            "mergeConfigurations": false
+        }
+    ],
+    "version": 4
+}
