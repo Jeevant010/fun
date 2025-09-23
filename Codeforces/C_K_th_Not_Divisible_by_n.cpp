@@ -21,11 +21,24 @@ ll og2(ll x){
     return (64 - __builtin_clzll(x) - 1);
 }
 
+int kthNonDivisible(int n, int k) {
+    int low = 1, high = 1e9;
+    while (low <= high) {
+    int mid = (low + high) / 2;
+    int count = mid - mid / n; // Count of numbers not divisible by n up to mid
+    if (count >= k)
+    high = mid - 1;
+    else
+    low = mid + 1;
+    }
+    return low;
+}
 
 void solve() {
     int n , k; 
     cin>>n>>k;
-    cout<<((k - 1) / (n - 1)) + k<<"\n";
+    cout<<kthNonDivisible(n , k)<<"\n";
+    // cout<<((k - 1) / (n - 1)) + k<<"\n";
 
     
 }
