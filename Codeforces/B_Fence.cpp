@@ -33,11 +33,28 @@ void solve() {
     v<int> v1(n);
     r(i, n) cin >> v1[i];
 
+
+    // brute force
+    // v<int> dp(n - m1 + 1, 0);
+    // for (int i = 0; i <= n - m1; i++) {
+    //     for (int j = i; j < i + m1; j++)
+    //         dp[i] += v1[j];
+    // }
+
     v<int> dp(n - m1 + 1, 0);
-    for (int i = 0; i <= n - m1; i++) {
-        for (int j = i; j < i + m1; j++)
-            dp[i] += v1[j];
+    // 2 pointer
+    int i = 0, j  = n-1;        
+
+    while( i < m1 ) {
+            dp[0] += v1[i] ;
+            i++;
+        }
+
+    while( i < n ){
+        dp[i-m1+1] = dp[ i -m1 ]- v1[i-m1] + v1[i];  
+        i++;
     }
+    // r(i, n - m1 + 1) cout<<dp[i]<<" ";
 
     auto ma = min_element(trvs(dp));
     int idx = distance(dp.begin(), ma);
