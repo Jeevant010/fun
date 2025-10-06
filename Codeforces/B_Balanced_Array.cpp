@@ -27,9 +27,9 @@ void solve() {
     cin>>n;
     if( n % 4 == 0) {
         cout<<"YES\n";
-        for(int i=2; i<=n; i += 2) cout<<i<<" ";
-        int j = 1 , s = 0;
-        for( int i = 0 ; i<n/2 - 1; i++){
+        for(ll i=2; i<=n; i += 2) cout<<i<<" ";
+        ll j = 1 , s = 0;
+        for(ll i = 0 ; i<n/2 - 1; i++){
             cout<<j<<" ";
             s += j;
             j += 2;
