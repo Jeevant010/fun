@@ -25,7 +25,7 @@ ll og2(ll x){
 void solve() {
     int l, r, u, d;
     cin>>l>>r>>u>>d;
-    if( l == r && d == u){
+    if( l == r && d == u && l == u){
         cout<<"YES"<<"\n";
         return;
     }
