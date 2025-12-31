@@ -45,8 +45,9 @@ ll og2(ll x){
 void solve() {
     float n, k;
     cin>>n>>k;
-    if( n > k) cout<<2<<"\n";
-    else cout<<ceil(k/n)<<"\n";
+    ll f = ceil(n/k);
+    k = k*f;
+    cout<<ceil(k/n)<<"\n";
 }
 
 int main() {
