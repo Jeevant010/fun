@@ -21,49 +21,59 @@ ll og2(ll x){
 }
 
 void solve() {
-    int n;
-    cin >> n;
-
-    vector<int> bills(n);
-    for (int i = 0; i < n; i++) {
-        cin >> bills[i];
-    }
-
-    int count25 = 0, count50 = 0; // Counters for available bills
-
-    for (int bill : bills) {
-        if (bill == 25) {
-            // Customer pays exact amount, no change needed
-            count25++;
-        } 
-        else if (bill == 50) {
-            // Needs 25 rubles change
-            if (count25 > 0) {
-                count25--;
-                count50++;
-            } else {
-                cout << "NO\n";
-                return ;
-            }
-        } 
-        else if (bill == 100) {
-            // Needs 75 rubles change
-            if (count50 > 0 && count25 > 0) {
-                // Prefer giving one 50 and one 25
-                count50--;
-                count25--;
-            } 
-            else if (count25 >= 3) {
-                // Otherwise give three 25s
-                count25 -= 3;
-            } 
-            else {
-                cout << "NO\n";
+     long int tf,fy,hn,n,c,i,a[100001];
+     cin>>n;
+        for(i=0; i<n; i++)
+        {
+            cin>>a[i];
         }
-    }
+        c=1;
+        tf=0;
+        hn=0;
+        fy=0;
+        for(i=0; i<n; i++)
+        {
+            if(a[i]==25)
+                tf++;
+            else if(a[i]==50)
+            {
+                if(tf<1)
+                {
+                    c=0;
+                    break;
+                }
+                else
+                {
+                    tf=tf-1;
+                    fy=fy+1;
+                }
+            }
+            else if(a[i]==100)
+            {
+                if(tf>=1&&fy>=1)
+                {
+                    tf=tf-1;
+                    fy=fy-1;
+                }
+                else if(tf>=3)
+                {
+                    tf=tf-3;
+                }
+                else
+                {
+                    c=0;
+                    break;
+                }
+            }
+
+
+        }
+        if(c==1)
+                cout<<"YES\n";
+            else
+                cout<<"NO\n";
 }
-    cout << "YES\n";
-}
+
 
 int main() {
     ios_base::sync_with_stdio(false);
