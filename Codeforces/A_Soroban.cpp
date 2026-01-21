@@ -21,62 +21,28 @@ ll og2(ll x){
 }
 
 void solve() {
-    ll int k=0;
-cin>>k;
-if(k==0){
- cout<<"O-|-OOOO"<<endl;return ;}
-ll int n=k;
-while(n)
-{
-    int tp=n%10;
-    
-    if(tp==0)
-    {
-        cout<<"O-|-OOOO"<<endl;
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> candies(n);
+    for (int i = 0; i < n; i++) {
+        cin >> candies[i];
     }
-     else if(tp==1)
-    {
-        cout<<"O-|O-OOO"<<endl;
+
+    int lastChild = 0;
+
+    // Iterate over each child to find who leaves last
+    for (int i = 0; i < n; i++) {
+        // Calculate how many turns this child will take
+        int turns = (candies[i] + m - 1) / m; // ceil(candies[i] / m)
+
+        // The child with the maximum turns will leave last
+        if (turns >= (candies[lastChild] + m - 1) / m) {
+            lastChild = i;
+        }
     }
-     else if(tp==2)
-    {
-        cout<<"O-|OO-OO"<<endl;
-    }
-    else if(tp==3)
-    {
-        cout<<"O-|OOO-O"<<endl;
-    }
-     else if(tp==4)
-    {
-        cout<<"O-|OOOO-"<<endl;
-    }
-         else if(tp==5)
-    {
-        cout<<"-O|-OOOO"<<endl;
-    }
-         else if(tp==6)
-    {
-        cout<<"-O|O-OOO"<<endl;
-    }
-         else if(tp==7)
-    {
-        cout<<"-O|OO-OO"<<endl;
-    }
-           else if(tp==8)
-    {
-        cout<<"-O|OOO-O"<<endl;
-    }
-           else if(tp==9)
-    {
-        cout<<"-O|OOOO-"<<endl;
-    }
-    
-    
-    
-    
-    
-    n/=10;
-}
+
+    cout << lastChild + 1 << "\n";
 }
 
 
